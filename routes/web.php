@@ -16,3 +16,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/inicio', function(){
+    $nomes = [
+        'Anakin',
+        'Lea',
+        'Cheetara',
+        'Jailson'
+    ];
+
+    $html = "<ul>";
+    foreach ($nomes as $nome){
+      $html .="<li>$nome</li>";
+    }
+    $html .= "</ul>";
+
+    return $html;
+}
+
+);
