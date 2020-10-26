@@ -4,6 +4,14 @@ Adicionar nome para animais
 @endsection
 
 @section('conteudo')
+@if ($errors->any())
+    <div class="alert alert-danger">    
+        <strong>Mensagem</strong>    
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach        
+    </div>
+@endif
 <div class="grid grid-cols-1 md:grid-cols-2">
     <div class="p-6">        
         <div class="ml-12">

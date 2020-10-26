@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/list', [AnimalsController::class, 'show'] );
-
-Route::get('/animal/adicionar', [AnimalsController::class, 'create'] );
-Route::post('/animal/adicionar', [AnimalsController::class, 'store'] );
+Route::get('/list', [AnimalsController::class, 'show'] )->name('listar_animais');
+Route::get('/animal/adicionar', [AnimalsController::class, 'create'] )->name('form_adicionar');
+Route::post('/animal/adicionar', [AnimalsController::class, 'store'] )->name('form_adicionar');
+Route::delete('/animal/remover/{id}', [AnimalsController::class, 'destroy'] )->name('form_remover');
