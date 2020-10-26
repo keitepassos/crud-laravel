@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\NomesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,21 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/inicio', function(){
-    $nomes = [
-        'Anakin',
-        'Lea',
-        'Cheetara',
-        'Jailson'
-    ];
+Route::get('/lista', [NomesController::class, 'show'] );
 
-    $html = "<ul>";
-    foreach ($nomes as $nome){
-      $html .="<li>$nome</li>";
-    }
-    $html .= "</ul>";
-
-    return $html;
-}
-
-);
+Route::get('/adicionar', [NomesController::class, 'create'] );
