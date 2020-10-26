@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-use App\Http\Controllers\NomesController;
+use App\Http\Controllers\AnimalsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/lista', [NomesController::class, 'show'] );
+Route::get('/list', [AnimalsController::class, 'show'] );
 
-Route::get('/adicionar', [NomesController::class, 'create'] );
+Route::get('/animal/adicionar', [AnimalsController::class, 'create'] );
+Route::post('/animal/adicionar', [AnimalsController::class, 'store'] );
